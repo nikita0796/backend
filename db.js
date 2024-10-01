@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 //const mongoUrl = 'mongodb://localhost:27017/onlinecourse';
 //const mongoUrl ='mongodb+srv://nikitadesai0796:Yvik8dJDrK10KMDy@cluster0.mpxux.mongodb.net/'
-const mongoUrl=process.env.MongoURL
+const mongoUrl=process.env.MongoDB_URL;
 
-mongoose.connect(MongoUrl, {
+mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
