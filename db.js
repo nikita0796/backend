@@ -1,7 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+require('dotenv').config();
+
+
 //const mongoUrl = 'mongodb://localhost:27017/onlinecourse';
 //const mongoUrl ='mongodb+srv://nikitadesai0796:Yvik8dJDrK10KMDy@cluster0.mpxux.mongodb.net/'
-const mongoUrl=process.env.MongoDB_URL;
+const mongoUrl=process.env.mongoDB_Url;
 
 mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
@@ -13,6 +16,6 @@ const db = mongoose.connection ;
 db.on('connected',()=>{
     console.log("connected mongodb server")
 } );
-db.on('error',()=>{
+db.on('error',(err)=>{
     console.log("error while connecting",err)
 });
